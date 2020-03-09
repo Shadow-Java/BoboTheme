@@ -1,0 +1,160 @@
+      <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="<%= themeConfig.domain %>"><img src="<%= themeConfig.domain %>/media/images/logoo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <% if (site.isHomepage) { %>
+                  <li class="current-menu-item"><a href="<%= themeConfig.domain %>" class="menu">첫페이지</a></li>
+                <% } else{ %>
+                  <li class=""><a href="<%= themeConfig.domain %>" class="menu">첫페이지</a></li>
+                <%} %>
+              
+                <% menus.forEach(function(menu) { %>
+
+
+              
+      
+              
+
+             
+              <%if(menu.name=="생활"){%>
+               
+                <li class="">
+                    <a href="" class="menu">
+                      <%= menu.name %>
+                    </a>
+
+
+                   <div id="headerLife" >
+                        <h5 class="life-demo">
+                          <a href="/books" >
+                               Books
+                          </a>
+                        </h5>
+                       <h5 class="life-demo">
+                          <a href="/movies" >
+                               Movies
+                          </a>
+                       </h5>
+                       <h5 class="life-demo">
+                          <a href="/dancing" >
+                               HipHop
+                          </a>
+                       </h5>
+                 
+                 </div>
+
+              </li>
+             <% }else if(menu.name=="기유 (주)"){ %>
+
+
+              <li class="">
+                    <a href="#" class="menu">
+                      <%= menu.name %>
+                    </a>
+
+
+                   <div id="headerLife" >
+                        <h5 class="life-demo">
+                          <a href="/friends" >
+                               Bro
+                          </a>
+                        </h5>
+                       <h5 class="life-demo">
+                          <a href="/girls" >
+                               GirlFriend
+                          </a>
+                       </h5>
+                       <h5 class="life-demo">
+                          <a href="#" >
+                               LadyBro
+                          </a>
+                       </h5>
+                 
+                 </div>
+
+              </li>
+
+               <% }else if(menu.name=="기술"){ %>
+
+
+              <li class="">
+                    <a href="#" class="menu">
+                      <%= menu.name %>
+                    </a>
+
+
+                   <div id="headerLife" >
+                        <h5 class="life-demo">
+                          <a href="/code" >
+                               Skills
+                          </a>
+                        </h5>
+                       <h5 class="life-demo">
+                          <a href="/interview" >
+                               LeetCode
+                          </a>
+                       </h5>
+                       <h5 class="life-demo">
+                          <a href="/skills" >
+                              Interview
+                          </a>
+                       </h5>
+                 
+                 </div>
+
+              </li>
+
+
+             <% }else{ %>
+             <li class="">
+                    <a href="<%= menu.link %>" class="menu">
+                      <%= menu.name %>
+                    </a>
+             </li>
+
+            <% } %>
+
+ 
+          
+
+          
+              
+                  
+
+                  
+                <% }); %>
+              </ul>
+            </nav>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
