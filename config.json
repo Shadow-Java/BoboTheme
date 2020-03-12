@@ -2,8 +2,21 @@
   "name": "bobo",
   "version": "1.0.0",
   "author": "liyuanbo",
-  "repository": "https://i.immmmm.com/gridea-theme-breek/",
+  "repository": "https://github.com/liyuanbo1997/BoboTheme",
   "customConfig": [
+    {"name":"keywords","label": "关键字","group": "网站信息","value": "","type": "input","note": "多个请用英文的分开"},
+    {"name":"description","label": "描述信息","group": "网站信息","value":"","type": "input","note": "你的网站描述"},
+    {"name":"resume","label": "简历","group": "你的项目经历","value":"false","type": "select",
+      "options": [
+        {"label":"开启","value":true},
+        {"label":"关闭","value":false}
+      ]},
+    {"name":"problemlist","label": "项目","group": "你的项目经历","value":"false","type": "select",
+      "options": [
+        {"label":"开启","value":true},
+        {"label":"关闭","value":false}
+      ],
+      "note": "你的项目集"},
     {"name": "github","label": "Github","group": "社交","value": "","type": "input","note": "链接地址"},
     {"name": "twitter","label": "Twitter","group": "社交","value": "","type": "input","note": "链接地址"},
     {"name": "instagram","label": "instagram","group": "社交","value": "","type": "input","note": "链接地址"},
@@ -25,6 +38,19 @@
         { "label": "描述", "name": "description", "type": "textarea", "value": "" }
       ],
       "note": "Logo 使用邮箱md5，在线 https://tool.chinaz.com/tools/md5.aspx "
-    }
+    },
+    {"name": "navigationIndex","label": "index","group": "二次链接","type": "array","value":[],
+      "arrayItems":[
+        {"label":"index/","name":"navigation1","type":"input","value":""}],
+      "note": "请输入index下导航"},
+    {"name": "navigationCode","label": "code","group": "二次链接","type": "array","value": [],
+      "arrayItems":[
+        {"label":"code/","name":"navigation2","type":"input","value":""}],
+        "note": "请输入code下的导航"},
+    {"name": "navigationOther","label": "other","group": "二次链接","type": "array","value": [],
+      "arrayItems":[
+        {"label":"others/","name":"navigation3","type":"input","value":""}],
+        "note": "请输入other下的导航"}
+    
   ]
 }

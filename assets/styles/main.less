@@ -3072,12 +3072,17 @@ body {
   font-weight: 400;
   color: #333;
   background: #F9F6F6;
+  //background: url("../images/boboo.png");
   -webkit-overflow-scrolling: touch;
   margin: 0 auto;
   letter-spacing: 0.3px;
   word-wrap: break-word;
   background: fixed -webkit-gradient(linear, left top, right bottom, from(#6d327c), color-stop(#485DA6), color-stop(#00a1ba), color-stop(#01b18e), to(#32b37b));
-  background: fixed linear-gradient(to right bottom, #6d327c, #485DA6, #00a1ba, #01b18e, #32b37b);
+  background: fixed linear-gradient(to right bottom,#f8d486, #f8bb86, #111, #18e5bc, #32b3a1);
+  /*#f8d486, #f8bb86, #111, #18e5bc, #32b3a1*/
+  /*#6d327c, #485DA6, #00a1ba, #01b18e, #32b37b*/
+    
+  
 }
 
 .nice-select .list,
@@ -8312,6 +8317,10 @@ div.epcl-share a.vk {
   content: "\eca7";
 }
 
+.fa-qq:before{
+  content:"\f1d6"}
+
+
 /*eae0*/
 .fa-calendar:before {
   content: "\ee33";
@@ -9238,11 +9247,97 @@ photos .photo:last-child{margin-right:0px;}
   display:block;
 }
 
- section.widget_epcl_tweets p img.fa-qq{
+ /*section.widget_epcl_tweets p img.fa-qq{
   font-size: 21px;
   position: absolute;
   left: 0;
   top: 5px;
   color: #1da1f2;
+}*/
+/*友情链接 start*/
+.friends {
+  display: flex;
+  flex-wrap: wrap;
 }
+.friends .a-friend {
+  display: flex;
+  margin: 10px 10px 0 0;
+  text-decoration: none;
+  font-weight: 300;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.friends .a-friend:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.friends .a-friend:active {
+  transform: scale(0.95);
+}
+.friends .a-friend .blog-avatar {
+  background-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.friends .a-friend .text-container {
+  margin-left: 10px;
+}
+.friends .a-friend .text-container .name {
+  font-size: 20px;
+  color:rgb(247, 227, 48);
+}
+.friends .a-friend .text-container .description {
+  font-size: 14px;
+  margin-top: 5px;
+}
+/*friend end*/
 
+/*字体颜色。.title.white*/
+/*下雪特效 start*/
+body {
+  background-color: #000;
+}
+body #snowcanvas {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  pointer-events: none;
+}
+/*下雪特效 end*/
+
+/*网页背景图片适配 start*/
+  body #web_bg{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:50%;
+  min-width: 1000px;
+  z-index:-10;
+  zoom: 1;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-position: center 0;
+}
+/*适配 end*/
+.backgroudouter {      
+        background: url('<%= themeConfig.domain %>/media/images/girlback.jpg') no-repeat center;      
+         background-size: cover;  
+         width:"100%";
+          height:"100%" ;
+          z-index:-100;     
+             position:fixed;
+             bottom:0;right:20px     
+           /* 只需要给背景图加上该属性即可 */      
+                     
+          //background-attachment:fixed;  
+      }
+
+      #cssmenu ul li:hover div{display:block;}

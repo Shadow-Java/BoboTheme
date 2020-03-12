@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <%- include('./includes/head', { siteTitle: `LeetCode算法 | ${themeConfig.siteName}` }) %>
+  </head>
+  <body>
+    <!-- start: #wrapper -->
+    <div class="wrapper">
+      
+      <%- include('./includes/header') %>
+
+      <main id="home" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+                
+            <!-- start: .articles -->
+            <span align="center">敬请期待(待我找到女朋友那天)</span>
+            <!-- end: .articles -->
+            
+            
+            
+          </div>
+          </div>
+        </div>
+      </main>
+      <%- include('./includes/footer') %>
+    </div>
+    <!-- end: #wrapper -->
+    <script type="text/javascript">
+        //樱花
+        var system = {};
+        var p = navigator.platform;
+        system.win = p.indexOf("Win") == 0;
+        system.mac = p.indexOf("Mac") == 0;
+        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+            if (system.win || system.mac || system.xll) {//如果是电脑
+    
+           $.getScript("https://amayaliu.cn/PersonalHabits/AmayaBlossoms.js");
+       } else { //如果是手机
+    
+       }
+    </script>
+  </body>
+   
+
+</html>

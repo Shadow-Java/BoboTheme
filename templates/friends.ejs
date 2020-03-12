@@ -1,6 +1,8 @@
 <html>
   <head>
   <%- include('./includes/head', { siteTitle: `myfriends | ${themeConfig.siteName}` }) %>
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+">
   </head>
   <body>
     <!-- start: #wrapper -->
@@ -9,28 +11,88 @@
       <%- include('./includes/header') %>
 
       <main id="friends" class="main fullcover no-sidebar content">
-
-
-
+      <h1 align="center" style="color: aliceblue;">My friends</h1>
         <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-          <div class="widget_tag_cloud tagcloud">
-          <% if (site.customConfig.friends) { %>
-            <% site.customConfig.friends.forEach(function(friend, tagIndex) { %>
-              <a href="<%= friend.siteLink %>" class="friend ctag ctag-<%= tagIndex %>"><img src="https://gravatar.loli.net/avatar/<%= friend.siteLogo %>"><%= friend.siteName %></a>
-            <% }); %>
-          <% } %>
-          </div>
+            <% if (site.customConfig.friends) { %>
+                <% site.customConfig.friends.forEach(function(friend, tagIndex) { %>
+                  <!-- <a href="<%= friend.siteLink %>" class="friend ctag ctag-<%= tagIndex %>"><img src="https://gravatar.loli.net/avatar/<%= friend.siteLogo %>"><%= friend.siteName %></a> -->
+      
+                  <!-- start demo -->
+                  <div class="friends">
+                    <a class="a-friend" target="_blank" style="background-color:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));color:white" href="<%= friend.siteLink %>">
+                        <img class="blog-avatar" src="https://cn.gravatar.com/avatar/<%= friend.siteLogo %>">
+                        <div class="text-container">
+                            <div class="name"><strong><%= friend.siteName %></strong></div>
+                            <div class="description"><%= friend.description %></div>
+                        </div>
+                    </a>
+                </div>
+                 <!-- end demo -->
+      
+                <% }); %>
+              <% } %>
         </div>
 
-        </div>
+        <div id="comments" class="bg-white hosted ">
+
+          <%if (site.customConfig.valineID && site.customConfig.valineKey) { %>
+                                          <%- include('./includes/valine') %>
+                                          <div class="clear"></div>
+                                          <% }else if ( typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+                                          <% if (commentSetting.commentPlatform === 'gitalk') { %>
+                                          <%- include('./gitalk') %>
+                                          <% } %>
+                                          <% if (commentSetting.commentPlatform === 'disqus') { %>
+                                          <%- include('./disqus') %>
+                                          <% } %>
+                                          <% }else { %>
+                                          <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                                          <% } %>
+
+            <div class="clear"></div>
           </div>
+
+          </div>
+
         </div>
+        
+
       </main>
 
     <%- include('./includes/footer') %>
     </div>
     <!-- end: #wrapper -->
+    <script>
+      var valine = new Valine();
+      valine.init({
+          el: '#comments',
+          appId: '<%= site.customConfig.valineID %>' ,
+          appKey: '<%= site.customConfig.valineKey %>',
+          pageSize: 30,
+          avatar: 'wavatar',
+          placeholder: '想要添加友链吗，那就在下方留言吧！<br/>头像暂且支持MD5邮箱,请在gravtor注册头像，留下MD5邮箱码~',
+          visitor: <%= site.customConfig.visitors %> // 阅读量统计
+      })
+  
+  
+  jQuery(document).ready(function($){
+      $('.vemoji-btn').text('😀');
+      $("#comments").on('click', 'span.vat',function(){
+          $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+          $('textarea#veditor').focus();
+      })
+      if(window.location.hash){
+          var checkExist = setInterval(function() {
+              if ($(window.location.hash).length) {
+                  $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                  clearInterval(checkExist);
+              }
+          }, 100);
+      }
+  })
+  </script>
+  
+
   </body>
 </html>
