@@ -15,15 +15,15 @@
 
 <details>
 <summary style="color:green">插件篇</summary>
-<p style="color:yellow">&emsp;&emsp;live2d 看板娘</p>
-<p>&emsp;&emsp;时间运行显示</p>
-<p>&emsp;&emsp;二级导航链接更新</p>
+<p style="color:yellow">&emsp;live2d 看板娘</p>
+<p>&emsp;时间运行显示</p>
+<p>&emsp;二级导航链接更新</p>
 <p>&emsp;个人简历模板</p>
 </details>
 <details>
 <summary style="color:green">特效篇</summary>
-   <p>&emsp;&emsp;雪花特效</p>
-   <p>&emsp;&emsp;鼠标点击特效(还有更多的特效在页面类)</p>
+   <p>&emsp;雪花特效</p>
+   <p>&emsp;鼠标点击特效(还有更多的特效在页面类)</p>
 </details>
 
 ## 🔞特征
